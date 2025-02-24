@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tarefas</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body id="page-container">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Voltar ao início</a></li>
+                <li><a href="./formulario_validacao.html">Exercício anterior</a></li>
+                <li><a href="./muda_cor_texto.html">Próximo exercício</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="content-wrap">
+        <h1>Lista de Tarefas</h1>
+        <div>
+            <input type="text" id="input-tarefa-nova" placeholder="Adicionar nova tarefa">
+            <button id="btn-add-tarefa">+</button>
+        </div>
+        <ul id="lista-tarefas"></ul>
+    </main>
+    <footer>
+        <p>&copy; 2025 - Direitos reservados à Lucas Longo</p>
+    </footer>
+    <script>
+        const inputTarefas = document.getElementById('input-tarefa-nova');
+        const botaoAddTarefa = document.getElementById('btn-add-tarefa');
+        const listaTarefas = document.getElementById('lista-tarefas');
+
+        botaoAddTarefa.addEventListener('click', () => {
+            var conteudoInput = inputTarefas.value;
+            var item = document.createElement('li'); // cria um item de lista
+            item.textContent = '- ' + conteudoInput; // bota o texto dentro dele
+            item.classList.toggle('tarefa'); // adiciona a classe tarefa pra aplicar a estética desta classe nele
+            // isso foi uma gambiarra que pensei pra deixar o texto da lista 
+            // de tarefas na cor preta mas ainda mutável
+            // se eu deixasse a lista ou os itens com texto preto, não daria pra deixar azul depois
+            // o motivo? desconheço completamente
+            
+            item.addEventListener('click', function() {
+                item.classList.toggle('importante'); // adiciona a classe importante a um item clicado
+                // essa classe deixa ele azul
+            }); // botei esse evento aqui dentro porque o item como algo avulso só existe aqui e não tem como acessar fora
+
+            // por fim, coloca o item no fim da lista como uma tag dentro da tag da lista
+            listaTarefas.appendChild(item);
+            conteudoInput = ''; // deixa o input em branco simulando o comportamento de um submit button
+        })
+
+
+    </script>
+</body>
+</html>

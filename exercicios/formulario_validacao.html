@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validação de formulário</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body id="page-container">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Voltar ao início</a></li>
+                <li><a href="./contagem_regressiva.html">Exercício anterior</a></li>
+                <li><a href="./lista_tarefas.html">Próximo exercício</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="content-wrap">
+        <form>
+            <div>
+                <div><label for="usuario">Usuário:<br><input type="text" id="usuario"></label></div>
+                <div><label for="senha">Senha:<br><input type="text" id="senha"></label></div>
+            </div>
+        </form>
+        <div><button id="submit-btn">Enviar</button></div>
+    </main>
+    <footer>
+        <p>&copy; 2025 - Direitos reservados à Lucas Longo</p>
+    </footer>
+    <script>
+        const botao = document.getElementById('submit-btn');
+        const usuario = document.getElementById('usuario');
+        const senha = document.getElementById('senha');
+        let cor = 'rgb(136, 223, 223)' // a cor não pôde ser constante porque ela muda
+        botao.addEventListener('click', () => {
+            if (usuario.value == '' || senha.value == '') { // se usuário ou senha estiverem vazios...
+                cor = 'rgb(241, 162, 162)' // isso é um vermelho claro
+                usuario.style.backgroundColor = cor;
+                senha.style.backgroundColor = cor;
+                return false; // finaliza a execução do script
+                // não lembro porque fiz isso
+            } else {
+                cor = 'rgb(136, 223, 223)' // cor original
+                usuario.style.backgroundColor = cor;
+                senha.style.backgroundColor = cor;
+                window.location.reload() // dá refresh na página, simulando o que um submit button faria
+            }
+            
+        });
+        
+    </script>
+</body>
+</html>

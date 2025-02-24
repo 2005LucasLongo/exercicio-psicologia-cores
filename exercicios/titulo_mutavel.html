@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título mutável</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body id="page-container">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Voltar ao início</a></li>
+                <li><a href="./teste_com_tags.html">Exercício anterior</a></li>
+                <li><a href="./contagem_regressiva.html">Próximo exercício</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="content-wrap">
+        <h1 id="changeable-title">Um título qualquer</h1>
+        <p>Escreva um mensagem e clique no botão abaixo para mudar o título.</p>
+        <input type="text" id="title-changer"></input><br>
+        <button id="title-changer-btn">Mudar o título</button>
+    </main>
+    <footer>
+        <p>&copy; 2025 - Direitos reservados à Lucas Longo</p>
+    </footer>
+    <script>
+        const botao = document.getElementById('title-changer-btn');
+        const titulo = document.getElementById('changeable-title');
+        botao.addEventListener('click', () => {
+            titulo.innerText = document.getElementById('title-changer').value;
+        })
+    </script>
+</body>
+</html>

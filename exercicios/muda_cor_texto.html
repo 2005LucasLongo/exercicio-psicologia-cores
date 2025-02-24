@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muda de Cor ao Clicar com Feedback Visual</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body id="page-container">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Voltar ao início</a></li>
+                <li><a href="./lista_tarefas.html">Exercício anterior</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="content-wrap">
+        <div>
+            <p id="color-changeable-text">Clique no botão abaixo para mudar a cor deste texto.</p>
+            <button id="change-color-btn">MUDAR COR!</button>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 - Direitos reservados à Lucas Longo</p>
+    </footer>
+    <script>
+        const botao = document.getElementById('change-color-btn');
+        botao.addEventListener('click', () => {
+            let paragrafo = document.getElementById('color-changeable-text');
+            paragrafo.style.color = 'rgb(208, 240, 157)'; // verde lima esbranquiçado
+        })
+    </script>
+</body>
+</html>
